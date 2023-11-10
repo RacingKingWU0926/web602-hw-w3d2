@@ -8,6 +8,7 @@
     font-size: 1.2rem;
 }
 
+// For step 4: use @mixin and @include for <p> in the class `.left` and `.right`.
 @mixin textBox {
     max-width: 50%;  // Limit width to 50%
     word-wrap: break-word;  // Break long words
