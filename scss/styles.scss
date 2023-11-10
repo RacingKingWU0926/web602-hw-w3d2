@@ -1,13 +1,21 @@
+// Step 1: import colors.scss
+@import "colors.scss";
 
-
-//Global
+// Step 2: fill in the colors, which were left blank
+// Global
 * {
-    color: ;
+    color: $textColor;
     font-size: 1.2rem;
 }
 
+@mixin textBox {
+    max-width: 50%;  // Limit width to 50%
+    word-wrap: break-word;  // Break long words
+    text-align: center;
+}
+
 .container {
-    background-color: ;
+    background-color: $bgColor;
     border: 1px solid #000;
     display: flex;
     height: 500px;
@@ -17,21 +25,36 @@
     width: 50%;
 
     .left {
-        background-color: ;
+        background-color: $leftColor;
         height: 100%;
         width: 69%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
+
+        p {
+            @include textBox;  // use the mixin
+        }
     }
 
     .right {
-        background-color: ;
+        background-color: $rightColor;
         height: 100%;
         position: relative;
         width: 29%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        p {
+            @include textBox;  // use the mixin
+        }
 
         .button {
-            background-color: ;
-            color: ;
+            background-color: $btnColor;
+            color: $btnTextColor;
             border: 0;
             border-radius: 10px;
             cursor: pointer;
@@ -50,3 +73,13 @@
     }
 
 }
+
+// Step 3: after you are done, compile this scss file to get a `.css` file
+// 1) Run `npm install -g sass`, or ...
+// run `sudo install -g sass` instead if root/Administrator is required.
+// 2) Run `sass <path to the scss file> <path to the destination css file>,
+// which is `sass scss/styles.scss css/styles.css`
+// 3) Preview the HTML file. It should have some styles.
+
+// Step 4: adding more stuff to this `style.scss` file, so that the final
+// page looks exactly the same as the desired output.
